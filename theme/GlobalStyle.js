@@ -1,7 +1,8 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from 'styled-components'
 import { normalize } from 'styled-normalize';
 
-const GlobalStyle = createGlobalStyle`
+// eslint-disable-next-line import/prefer-default-export
+export const GlobalStyle = createGlobalStyle`
   * {
     box-sizing: border-box;
   }
@@ -10,9 +11,8 @@ const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     padding: 0;
-    font-family: "'Rubik', sans-serif"    
+    font-family: ${({ theme }) => theme.fontFamily};
   }
-  
   /* Full height layout */
   html, body {
     display: flex;
@@ -24,6 +24,4 @@ const GlobalStyle = createGlobalStyle`
     display: flex;
     flex-direction: column;
   }
-`;
-
-export default GlobalStyle;
+`

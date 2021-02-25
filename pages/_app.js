@@ -1,7 +1,9 @@
 import { ThemeProvider } from 'styled-components'
-import theme from '../theme'
-import Head from 'next/head'
-import GlobalStyle from '../theme/GlobalStyle/index';
+import React from 'react';
+import Head from 'next/head';
+import theme from '../theme';
+import { GlobalStyle } from '../theme/GlobalStyle';
+
 
 
 export default function App({ Component, pageProps }) {
@@ -15,8 +17,8 @@ export default function App({ Component, pageProps }) {
           rel="stylesheet"
         />
     </Head>
-      <GlobalStyle />
       <ThemeProvider theme={theme}>
+        <GlobalStyle />
         <Component {...pageProps} />
       </ThemeProvider>
     </>
